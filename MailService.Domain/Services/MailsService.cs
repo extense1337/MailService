@@ -21,9 +21,7 @@ public interface IMailService
     IEnumerable<Mail> GetAllMails();
 }
 
-/// <summary>
-/// Сервис сообщений
-/// </summary>
+/// <inheritdoc />
 public class MailsService : IMailService
 {
     private readonly IMailRepository _mailRepository;
@@ -38,11 +36,13 @@ public class MailsService : IMailService
     /// <inheritdoc />
     public async Task<Mail> SendMailAsync(MailEnvelope mailEnvelope, CancellationToken cancellationToken)
     {
-        var mail = new Mail();
+        var mail = new Mail
+        {
+            MailEnvelope = mailEnvelope,
+            CreationDate = DateTime.Now
+        };
 
-        // todo: smtp logic
-        _smtpService.SendMessage();
-
+        await _smtpService.SendMessageAsync(mail, cancellationToken);
         await _mailRepository.SaveMailAsync(mail, cancellationToken);
 
         return mail;
