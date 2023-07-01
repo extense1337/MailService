@@ -23,7 +23,7 @@ public class MailRepository : IMailRepository
         {
             Subject = mail.MailEnvelope.Subject,
             Body = mail.MailEnvelope.Body,
-            Recipients = mail.MailEnvelope.Recipients,
+            Recipients = string.Join("; ", mail.MailEnvelope.Recipients),
             CreationDate = mail.CreationDate,
             Result = mail.Result,
             FailedMessage = mail.FailedMessage
@@ -41,7 +41,7 @@ public class MailRepository : IMailRepository
             {
                 Subject = mailEntity.Subject,
                 Body = mailEntity.Body,
-                Recipients = mailEntity.Recipients
+                Recipients = mailEntity.Recipients.Split(new[] {"; "}, StringSplitOptions.RemoveEmptyEntries).ToList()
             },
             CreationDate = mailEntity.CreationDate,
             Result = mailEntity.Result,

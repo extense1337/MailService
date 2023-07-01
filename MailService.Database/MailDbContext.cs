@@ -4,20 +4,23 @@ namespace MailService.Database;
 
 public sealed class MailDbContext : DbContext
 {
-    private readonly string _connectionString;
-
-    public MailDbContext(DbContextOptions<MailDbContext> options, string connectionString)
+    public MailDbContext(DbContextOptions<MailDbContext> options)
         : base(options)
     {
-        _connectionString = connectionString;
     }
 
     public DbSet<MailEntity> Mails { get; set; } = null!;
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder
-            .UseNpgsql(_connectionString)
             .UseSnakeCaseNamingConvention();
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<MailEntity>().HasKey(entity => entity.Id);
+    }
 
     #region Migration commands
 

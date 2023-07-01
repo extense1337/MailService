@@ -5,6 +5,11 @@ namespace MailService.Database;
 public class MailEntity
 {
     /// <summary>
+    /// Идентификатор
+    /// </summary>
+    public int Id { get; set; }
+
+    /// <summary>
     /// Тема сообщения
     /// </summary>
     public string Subject { get; set; }
@@ -17,7 +22,7 @@ public class MailEntity
     /// <summary>
     /// Адресаты
     /// </summary>
-    public ICollection<string> Recipients { get; set; }
+    public string Recipients { get; set; }
 
     /// <summary>
     /// Дата создания

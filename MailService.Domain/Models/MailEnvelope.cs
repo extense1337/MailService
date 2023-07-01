@@ -18,5 +18,5 @@ public class MailEnvelope
     /// <summary>
     /// Адрессаты
     /// </summary>
-    public ICollection<string> Recipients { get; set; }
+    public List<string> Recipients { get; set; }
 }
