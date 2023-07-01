@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Database;
+namespace MailService.Database;
 
 public sealed class MailDbContext : DbContext
 {

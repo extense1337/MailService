@@ -1,4 +1,4 @@
-﻿namespace Domain.Models;
+﻿namespace MailService.Domain.Models;
 
 /// <summary>
 /// Конверт сообщения

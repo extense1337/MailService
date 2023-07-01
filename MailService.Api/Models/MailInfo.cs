@@ -1,5 +1,5 @@
 ﻿using System.Text.Json.Serialization;
-using Domain.Models;
+using MailService.Domain.Models;
 
 namespace MailService.Api.Models;
 

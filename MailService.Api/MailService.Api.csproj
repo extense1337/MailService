@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Domain\Domain.csproj" />
+      <ProjectReference Include="..\MailService.Domain\MailService.Domain.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿namespace Domain.Services;
+﻿namespace MailService.Domain.Services;
 
 public interface ISmtpService
 {

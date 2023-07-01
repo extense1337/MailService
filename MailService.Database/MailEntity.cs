@@ -1,23 +1,23 @@
-﻿namespace Domain.Models;
+﻿using MailService.Domain.Models;
 
-/// <summary>
-/// Результат отправки
-/// </summary>
-public enum SendResult : byte
-{
-    Failed = 0,
-    OK = 1
-}
+namespace MailService.Database;
 
-/// <summary>
-/// Сообщение
-/// </summary>
-public class Mail
+public class MailEntity
 {
     /// <summary>
-    /// Конверт сообщения
+    /// Тема сообщения
     /// </summary>
-    public MailEnvelope MailEnvelope { get; set; }
+    public string Subject { get; set; }
+
+    /// <summary>
+    /// Тело сообщения
+    /// </summary>
+    public string Body { get; set; }
+
+    /// <summary>
+    /// Адресаты
+    /// </summary>
+    public ICollection<string> Recipients { get; set; }
 
     /// <summary>
     /// Дата создания

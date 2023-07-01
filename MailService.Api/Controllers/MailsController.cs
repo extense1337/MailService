@@ -1,5 +1,5 @@
-﻿using Domain.Models;
-using Domain.Services;
+﻿using MailService.Domain.Models;
+using MailService.Domain.Services;
 using MailService.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 

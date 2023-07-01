@@ -1,7 +1,7 @@
-﻿using Domain.Models;
-using Domain.Repositories;
+﻿using MailService.Domain.Models;
+using MailService.Domain.Repositories;
 
-namespace Domain.Services;
+namespace MailService.Domain.Services;
 
 /// <summary>
 /// Сервис сообщений

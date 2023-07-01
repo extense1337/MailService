@@ -1,6 +1,6 @@
-﻿using Domain.Models;
+﻿using MailService.Domain.Models;
 
-namespace Domain.Repositories;
+namespace MailService.Domain.Repositories;
 
 public interface IMailRepository
 {

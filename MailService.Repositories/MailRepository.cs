@@ -1,6 +1,6 @@
-﻿using Database;
-using Domain.Models;
-using Domain.Repositories;
+﻿using MailService.Database;
+using MailService.Domain.Models;
+using MailService.Domain.Repositories;
 
 namespace MailService.Repositories;
 

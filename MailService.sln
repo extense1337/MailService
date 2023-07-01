@@ -2,9 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailService.Api", "MailService.Api\MailService.Api.csproj", "{1BC1E86C-715B-4ADF-8038-CF9EE284B105}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{067B9A3E-4197-4156-8948-4F639E2E7D96}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailService.Domain", "MailService.Domain\MailService.Domain.csproj", "{067B9A3E-4197-4156-8948-4F639E2E7D96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{20C5F3A3-90CC-4154-9E45-7B1A365DE03E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailService.Database", "MailService.Database\MailService.Database.csproj", "{20C5F3A3-90CC-4154-9E45-7B1A365DE03E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailService.Repositories", "MailService.Repositories\MailService.Repositories.csproj", "{77AE01B4-5C0D-441D-9B7D-9C948EAF3D32}"
 EndProject
