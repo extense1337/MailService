@@ -45,11 +45,10 @@ public class SmtpService : ISmtpService
 
         using var client = new SmtpClient();
 
-        await client.ConnectAsync(_smtp.Host, _smtp.Port, _smtp.UseSsl, cancellationToken);
-        await client.AuthenticateAsync(_smtp.UserName, _smtp.Password, cancellationToken);
-
         try
         {
+            await client.ConnectAsync(_smtp.Host, _smtp.Port, _smtp.UseSsl, cancellationToken);
+            await client.AuthenticateAsync(_smtp.UserName, _smtp.Password, cancellationToken);
             await client.SendAsync(message, cancellationToken);
             mail.Result = SendResult.OK;
         }
