@@ -31,6 +31,9 @@ builder.Services.RegisterDomainLayer();
 
 var app = builder.Build();
 
+// DateTime to npgsql timestamp with time zone; todo: fix column type
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
