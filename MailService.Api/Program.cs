@@ -16,7 +16,7 @@ builder.Services.AddDbContext<MailDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("NpgMailDbConnection"));
 });
 
-builder.Services.AddSingleton(new SmtpSettings
+builder.Services.AddSingleton(new SmtpSettings // todo: register smtp client instead (System.Net.Mail legacy)
 {
     Host = builder.Configuration.GetValue<string>("Smtp:Host"),
     Port = builder.Configuration.GetValue<int>("Smtp:Port"),
@@ -26,7 +26,7 @@ builder.Services.AddSingleton(new SmtpSettings
     FromName = builder.Configuration.GetValue<string>("Smtp:FromName"),
     FromAddress = builder.Configuration.GetValue<string>("Smtp:FromAddress")
 });
-//builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
+// todo: builder.Configuration.GetSection("SmtpSettings").Get<SmtpSettings>();
 builder.Services.RegisterDomainLayer();
 
 var app = builder.Build();
